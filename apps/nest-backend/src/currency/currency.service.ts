@@ -60,7 +60,7 @@ export class CurrencyService {
             `base=${base}&` +
             `symbols=${symbols}`);
         rate = response.data.rates[symbols];
-        console.log(options + " rate: " + rate);
+        console.log("Base = " + base + "; target = " + symbols + "; " + options + " rate: " + rate);
         this.saveCurrency(
             `${base}`,
             `${symbols}`,
