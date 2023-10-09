@@ -1,4 +1,4 @@
-import { Injectable, Redirect } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import axios from 'axios';
 import { Currency } from './schemas/currency.schema';
@@ -11,10 +11,10 @@ export class CurrencyService {
 
     }
 
-    async getGifByCurrency(base: string = `${process.env.CURRENCY_BASE}`,
-    symbols: string = `${process.env.CURRENCY_SYMBOLS}`) {
-        let todayCurrency = await this.getCurrency("today", base, symbols);
-        let yesterdayCurrency = await this.getCurrency("yesterday", base, symbols);
+    async getGifByCurrency(base = `${process.env.CURRENCY_BASE}`,
+    symbols = `${process.env.CURRENCY_SYMBOLS}`) {
+        const todayCurrency = await this.getCurrency("2023-10-05", base, symbols);
+        const yesterdayCurrency = await this.getCurrency("2023-10-04", base, symbols);
         let gif;
         if(todayCurrency > yesterdayCurrency) {
             gif = await this.getGif("rich");
@@ -25,42 +25,14 @@ export class CurrencyService {
         return gif;
     }
 
-    async getCurrency(options: string, base: string, symbols: string) {
-        let d = 0;
-        switch(options) {
-            case "today": {
-                d = 0;
-                break;
-            }
-            case "yesterday": {
-                d = -1;
-                break;
-            }
-            default: {
-                console.log("not an option");
-                return 0;
-            }
-        }
-        let rate: number;
-        let data = new Date();
-        let year = data.getFullYear();
-        let month = ("0" + (data.getMonth() + 1)).slice(-2);
-        let day = ("0" + data.getDate()).slice(-2);
-        if(d != 0 && data.getDate() === 0) {
-            month = ("0" + data.getMonth()).slice(-2);
-            day = "27";
-        }
-        else if(d != 0) {
-            day = ("0" + (data.getDate() - 1)).slice(-2);
-        }
-        let date = year + "-" + month + "-" + day;
-        let response = await axios.get(
+    async getCurrency(date: string, base: string, symbols: string) {
+        const response = await axios.get(
             `${process.env.CURRENCY_URL}` + date + `.json?` +
             `app_id=${process.env.CURRENCY_APP_ID}&` +
             `base=${base}&` +
             `symbols=${symbols}`);
-        rate = response.data.rates[symbols];
-        console.log("Base = " + base + "; target = " + symbols + "; " + options + " rate: " + rate);
+        const rate: number = response.data.rates[symbols];
+        console.log(date + " Base = " + base + "; target = " + symbols + "; rate: " + rate);
         this.saveCurrency(
             `${base}`,
             `${symbols}`,
@@ -69,12 +41,11 @@ export class CurrencyService {
     }
 
     async getGif(tag: string) {
-        let url: string;
-        let response = await axios.get(
+        const response = await axios.get(
             `${process.env.GITHY_URL}?` +
             `api_key=${process.env.GITHY_API_KEY}&q=` + tag);
-        let rand = Math.floor((Math.random() * 50));
-        url = response.data.data[rand].images.original.url;
+        const rand = Math.floor((Math.random() * 50));
+        const url: string = response.data.data[rand].images.original.url;
         console.log("Giph with tag = " + tag + ": " + url);
         return url;
     }

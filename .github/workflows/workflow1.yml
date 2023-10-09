@@ -1,0 +1,39 @@
+name: Workflow1
+on:
+  push:
+    branches:
+    - main
+    - dev
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build backend
+        run: nx build nest-backend
+
+      - name: Build frontend
+        run: nx build react-frontend
+
+  test:
+    needs: build
+    runs-on: self-hosted
+
+    steps:
+      - name: Test nest-backend
+        run: nx test nest-backend
+
+      - name: Test nest-backend-e2e
+        run: nx e2e nest-backend-e2e

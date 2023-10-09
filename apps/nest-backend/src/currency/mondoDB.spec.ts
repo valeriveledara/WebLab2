@@ -1,5 +1,3 @@
-import { Model } from "mongoose";
-import { Currency, CurrencySchema } from "./schemas/currency.schema";
 const {MongoClient} = require('mongodb');
 
 describe('insert', () => {
