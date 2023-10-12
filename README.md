@@ -1,6 +1,5 @@
 # **Лабораторная работа №2 по дисциплине "Веб-технологии"**
 
-![Version](<https://img.shields.io/badge/Version-1.81.1-brightgreen>)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Telegram](https://img.shields.io/badge/Telegram-RomanTsitsunov-2CA5E0?style=social&logo=telegram)](https://t.me/RomanTsitsunov)
 [![Telegram](https://img.shields.io/badge/Telegram-bloody_marr-2CA5E0?style=social&logo=telegram)](https://t.me/bloody_marr)
