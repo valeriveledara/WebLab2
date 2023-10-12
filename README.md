@@ -1,8 +1,8 @@
 # Лабораторная работа №2 по дисциплине "Веб-технологии"
 
 ![Version](<https://img.shields.io/badge/Version-5.2.2-brightgreen>)
-[![Telegram](https://img.shields.io/badge/Telegram-@bloody_marr-2CA5E0?style=flat&logo=telegram)](https://t.me/@bloody_marr)
 [![Telegram](https://img.shields.io/badge/Telegram-@RomanTsitsunov-2CA5E0?style=social&logo=telegram)](https://t.me/@RomanTsitsunov)
+[![Telegram](https://img.shields.io/badge/Telegram-@bloody_marr-2CA5E0?style=social&logo=telegram)](https://t.me/@bloody_marr)
 
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
