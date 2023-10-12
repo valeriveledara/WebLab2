@@ -73,6 +73,7 @@ b. В качестве наполнения бралась совокупнос�
     <li>Библиотека контента GIF-файлов и стикеров (https://developers.giphy.com/docs/api/)
     <li>Интеграция с СУБД (https://dicem228.medium.com-nest-js-mongodb-%D0%B8-vue-js-b33a9cbbab5b)
     <li>Реализация React (https://habr.com/ru/companies/domclick/articles/672546/)
+    <li>Введение в Nx (https://nx.dev/getting-started/intro)
 </ul>
 
 ## **Установка и запуск**
