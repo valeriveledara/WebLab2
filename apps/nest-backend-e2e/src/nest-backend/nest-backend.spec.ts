@@ -42,9 +42,7 @@ describe('GET /api', () => {
       try {
       await axios.get(`/currency/exchangeCurrency/${base}/JPY`);
       }
-      catch {
-
-      };
+      catch { /* empty */ };
     }
 
     expect(await er("RUB")).toThrow;

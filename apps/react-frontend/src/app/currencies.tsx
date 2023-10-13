@@ -6,9 +6,9 @@ function Currencies() {
     const [value, setvalue] = useState("");
     const [modalIsOpen, setmodalIsOpen] = useState(false);
 
-    function back(base: any, symbols: any) {
+    function back(base: string, symbols: string) {
         return async function () {
-            let g = await axios.get(`currency/exchangeCurrency/${base}/${symbols}`);
+            const g = await axios.get(`currency/exchangeCurrency/${base}/${symbols}`);
             setvalue(g.data);
             setmodalIsOpen(true);
         }
@@ -38,7 +38,7 @@ function Currencies() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
         >
-            <img src={value}/>
+            <img src={value} alt={value}/>
         </Modal>
         </div>
     )
