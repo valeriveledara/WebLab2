@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Telegram](https://img.shields.io/badge/Telegram-RomanTsitsunov-2CA5E0?style=social&logo=telegram)](https://t.me/RomanTsitsunov)
 [![Telegram](https://img.shields.io/badge/Telegram-bloody_marr-2CA5E0?style=social&logo=telegram)](https://t.me/bloody_marr)
-[![VKontakte](https://img.shields.io/badge/VKontakte-Profile-9cf?style=flat&logo=vk)](https://vk.com/iowa63)
+[![VKontakte](https://img.shields.io/badge/VKontakte-iowa63-9cf?style=flat&logo=vk)](https://vk.com/iowa63)
 
 
 ![Birja](https://thumb.tildacdn.com/tild6338-6533-4332-b832-383730366662/-/format/webp/photo_2022-11-09_13-.jpg)
