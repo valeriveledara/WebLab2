@@ -6,7 +6,7 @@ on:
     - dev
 jobs:
   build:
-    runs-on: self:latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout code
@@ -29,7 +29,7 @@ jobs:
 
   test:
     needs: build
-    runs-on: self:latest
+    runs-on: self-hosted
 
     steps:
       - name: Test nest-backend
